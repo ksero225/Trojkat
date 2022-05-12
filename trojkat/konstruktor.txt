@@ -1,0 +1,11 @@
+Trojkat::Trojkat(struct WspA &WspWierzA, struct WspB &WspWierzB, struct WspC &WspWierzC){
+	AB = oblicz_bok(wspWierzA.x, wspWierzB.x, wspWierzA.y, wspWierzB.y);
+	BC = oblicz_bok(wspWierzB.x, wspWierzC.x, wspWierzB.y, wspWierzC.y);
+	CA = oblicz_bok(wspWierzC.x, wspWierzA.x, wspWierzC.y, wspWierzA.y);
+}
+public:
+		Trojkat(
+			struct wspolrzedneA &WspolrzedneWierzcholkaA,
+			struct wspolrzedneB &WspolrzedneWierzcholkaB,
+			struct wspolrzedneC &WspolrzedneWierzcholkaC
+		);
