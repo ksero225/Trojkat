@@ -7,7 +7,7 @@
 
 #define PI 3.14159
 
-doxygen <config_file>
+//doxygen <config_file>
 
 using namespace std;
 /**
@@ -217,7 +217,6 @@ class TrojkatRownoboczny:public Trojkat {
 			pole = obliczPole(bokAB);
 			alfa = 60, beta = 60, gamma = 60;
 			Trojkat::wyswietlDane(WspA, WspB, WspC);
-			cout << "Wysokosc wynosi: " << h << endl;
 		};
 	private:
 		// tutaj obliczamy obwod, miary katow, pole,
@@ -245,25 +244,19 @@ class TrojkatProstokatny:public Trojkat {
 		    struct Wsp &WspC
 		):Trojkat(WspA, WspB, WspC) {
 			if(przeciwP == bokAB) {
-				h1 = bokBC;
-				h2 = bokCA;
-				pole = obliczPole(bokAB, h1);
+				h = bokBC;
+				pole = obliczPole(bokAB, h);
 			} else if(przeciwP == bokBC) {
-				h1 = bokAB;
-				h2 = bokCA;
-				pole = obliczPole(bokAB, h1);
+				h = bokAB;
+				pole = obliczPole(bokAB, h);
 			} else if(przeciwP == bokCA) {
-				h1 = bokAB;
-				h2 = bokBC;
-				pole = obliczPole(bokAB, h1);
+				h = bokAB;
+				pole = obliczPole(bokAB, h);
 			}
 			obwod = obliczObwod(bokAB, bokBC, bokCA);
 			Trojkat::wyswietlDane(WspA, WspB, WspC);
-			cout << "Wysokosc trojkata wynosi: " << h1 << " lub " << h2 << endl;
-			cout << "Przeciwprostokatna wynosi: " << przeciwP << endl;
 		};
 	private:
-		double h1, h2;
 		double obliczPole(double a, double h) {
 			return (a*h)/2;
 		}
